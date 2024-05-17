@@ -6,4 +6,16 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'MyBotanic' });
 });
 
+router.get('/explore', function(req, res, next) {
+  res.render('explore')
+});
+
+router.get('/aboutus', function(req, res, next) {
+  res.render('aboutus')
+})
+
+router.get('/contact', function(req, res, next) {
+  res.render('contact')
+})
+
 module.exports = router;
