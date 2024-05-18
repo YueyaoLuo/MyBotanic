@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes up at least the full viewport height */
+    margin: 0;
+  }
+  
+  main {
+    flex: 1; /* Allow the main content to grow and take up remaining space */
+  }
+
+
+ .user-new-post {
+    margin: 50px;
+    height: 200px;
+    border-radius:20px;
+    padding:20px;
+    background: rgb(139, 169, 139);
+    display: flex;
+    justify-content: center;
+ }
+#new-post{
+    align-content: center;
+    
+}
+ .new-input-box{
+    height:120px;
+    width: 400px;
+ 
+ }
+ .create-post{
+    padding:3px 15px;
+ }

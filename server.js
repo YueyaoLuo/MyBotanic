@@ -9,6 +9,7 @@ require('dotenv').config();
 require('./config/database');
 
 var indexRouter = require('./routes/index');
+var postsRouter = require('./routes/home');
 
 
 var app = express();
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
 app.get('/', indexRouter);
+app.get('/home', postsRouter)
 
 app.listen(3000, function () {
     console.log('Listening on port 3000');

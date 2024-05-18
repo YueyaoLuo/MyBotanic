@@ -1,139 +1,139 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure body takes up at least the full viewport height */
+  margin: 0;
+}
+
+main {
+  flex: 1; /* Allow the main content to grow and take up remaining space */
+}
+
+
+i {
+  margin-right: 10px;
+}
+/*----------bootstrap-navbar-css------------*/
+
+a:hover{
+  color: white;
+  text-decoration: none;
+
+}
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+
+}
+.navbar-brand {
+  padding: 15px;
+  font-size:1.5em;
+  align-items: center;
+
+}
+.navbar-title {
+  display:inline-block;
+  padding: 10px;
+  color: #fff;
+  font-family: "Luckiest Guy", sans-serif;
+  font-size: 1.2em;
+
+}
+.navbar-img {
+  display: inline-block;
+
+  height: 64px;
+  width:64px;
+
+}
+.navbar-mainbg {
+  background-color: #2E4A3B;
+  padding: 0px;
+}
+
+.nav-item {
+  display:inline-block;
+  align-items: flex-end;
+  list-style: none;
+  color: #ccc;
+  font-size: 1.2em;
+  margin: 0 10px;
+  transition: 1s;
+  text-decoration: none;
   
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Ensure body takes up at least the full viewport height */
-    margin: 0;
-  }
-  
-  main {
-    flex: 1; /* Allow the main content to grow and take up remaining space */
-  }
-  
-  
-  i {
-    margin-right: 10px;
-  }
-  /*----------bootstrap-navbar-css------------*/
+}
 
-  a:hover{
-    color: white;
-    text-decoration: none;
-
-  }
-  .navbar{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
- 
-
-  }
-  .navbar-brand {
-    padding: 15px;
-    font-size:1.5em;
-    align-items: center;
-
-  }
-  .navbar-title {
-    display:inline-block;
-    padding: 10px;
-    color: #fff;
-    font-family: "Luckiest Guy", sans-serif;
-    font-size: 1.2em;
-
-  }
-  .navbar-img {
-    display: inline-block;
-
-    height: 64px;
-    width:64px;
-
-  }
-  .navbar-mainbg {
-    background-color: #2E4A3B;
-    padding: 0px;
-  }
-  
-  .nav-item {
-    display:inline-block;
-    align-items: flex-end;
-    list-style: none;
-    color: #ccc;
-    font-size: 1.2em;
-    margin: 0 10px;
-    transition: 0.5s;
-    text-decoration: none;
-    opacity: 0.75;
-    
-  }
-  
-  .nav-item a{
-    color: white;
-  }
-  .nav-item a:hover{
-    /* opacity: 0; */
-    text-decoration: underline;
-    transform: translateY(-15px);
-    color: white;
-  }
+.nav-item a{
+  color: white;
+  transition:0.5s;
+}
+.nav-item a:hover{
+  opacity: 1;
+  text-decoration: underline;
+  text-decoration-color:rgb(121, 255, 121);
+  transform: translateY(-15px);
+  color: rgb(121, 255, 121);
+}
 
 
 
 
-  footer {
-    position: fixed;
-    bottom:0;
-    width: 100%;
-    background: #2E4A3B;
-    min-height: 100px;
-    padding: 20px 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-  }
-  
-  footer .social_icon {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 10px 0;
-  }
-  
-  footer .social_icon li{
-    list-style: none;
-  }
-  footer .social_icon li a {
-    font-size: 2em;
-    color: #ccc;
-    margin: 0 10px;
-    display: inline-block;
+footer {
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  background: #2E4A3B;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
 
-  }
-  footer .social_icon li a:hover {
-    transform: translateY(-15px);
-    color: white;
-  }
-  
+footer .social_icon {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 10px 0;
+}
 
-  p {
-    color: white;
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    font-size: 1.1em;
-  }
-  
-  .copyright {
-    color: white;
-    font-size:0.8em;
-  }
-  
+footer .social_icon li{
+  list-style: none;
+}
+footer .social_icon li a {
+  font-size: 2em;
+  color: #ccc;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+footer .social_icon li a:hover {
+  transform: translateY(-15px);
+  color: white;
+}
+
+
+p {
+  color: white;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.copyright {
+  color: white;
+  font-size:0.8em;
+}
