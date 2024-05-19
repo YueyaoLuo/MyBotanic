@@ -52,7 +52,7 @@ a:hover{
   display: inline-block;
 
   height: 64px;
-  width:64px;
+  /* width:64px; */
 
 }
 .navbar-mainbg {
@@ -84,7 +84,9 @@ a:hover{
   color: rgb(121, 255, 121);
 }
 
-
+.nav-login img{
+  height: 30px;
+}
 
 
 footer {

@@ -19,22 +19,24 @@
 
  .user-new-post {
     margin: 50px;
-    height: 200px;
-    border-radius:20px;
+    border-radius:10px;
     padding:20px;
     background: rgb(139, 169, 139);
-    display: flex;
-    justify-content: center;
- }
-#new-post{
-    align-content: center;
     
-}
+
+ }
+
+ #new-post{
+   display: flex;
+   justify-content: center;
+   align-items: flex-end;
+ }
  .new-input-box{
-    height:120px;
-    width: 400px;
+
+    width: 800px;
  
  }
  .create-post{
-    padding:3px 15px;
+   margin: 0 8px;
+    padding:2px 15px;
  }

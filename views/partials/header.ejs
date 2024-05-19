@@ -8,34 +8,40 @@
   <link rel="stylesheet" href="/stylesheets/layout.css">
   <link rel="stylesheet" href="/stylesheets/content.css">
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
   <title>MyBotanic</title>
 </head>
+
 <body>
-<header>
-  <nav class="navbar navbar-mainbg">
-    <div class="navbar-brand">
-    <img src="/images/logo.png" class="navbar-img">
-    <a class="navbar-title" href="#">MyBotanic</a>
-  </div>
+  <header>
+    <nav class="navbar navbar-mainbg">
+      <div class="navbar-brand">
+        <img src="/images/logo.png" class="navbar-img">
+        <a class="navbar-title" href="#">MyBotanic</a>
+      </div>
 
 
-    <div class="navbar-text">
-      <li class="nav-item">
-        <a class="nav-link" href="/">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/explore">Explore</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/my-plant-collection">My Plant Collection</a>
-      </li>
-
-    </div>
-    </ul>
-    </div>
-  </nav>
-</header>
-<main class="container">
+      <div class="navbar-text">
+        <li class="nav-item">
+          <a class="nav-link" href="/home">Home</a>
+        </li>
+        <%if(user){%>
+          <li class="nav-item">
+            <a class="nav-link" href="/my-plant-collection">My Plant Collection</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Log Out</a>
+          </li>
+          <%} else {%>
+            <li class="nav-item">
+            <a class="nav-link nav-login" href="/auth/google" >Log In&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+          </li>
+            <%}%>
+      </div>
+      </ul>
+      </div>
+    </nav>
+  </header>
+  <main class="container">
 
 </html>
