@@ -17,7 +17,7 @@ header{
 }
 main {
   flex: 1; /* Allow the main content to grow and take up remaining space */
-  padding-top: 100px;
+  padding-top: 159px;
   padding-bottom: 153px;
 }
 

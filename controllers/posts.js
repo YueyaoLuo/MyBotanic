@@ -9,9 +9,9 @@ module.exports = {
 }
 
 async function index(req, res) {
-    //to show posts in order by date/time
-    const posts = await Post.find({}).sort('date');
-    console.log('Fetched posts for index:', posts);
+    //to show posts in descending order by date/time
+    const posts = await Post.find({});
+    console.log('Fetched posts for index:', posts); //test if it is reading post
     res.render('posts/index', { posts })
 }
 
@@ -34,13 +34,12 @@ async function create(req, res) {
             userName: req.user.name,
             userAvatar:req.user.avatar,
         }
-        console.log(post)
         await Post.create(post);
 
     } catch (err) {
         console.error(err)
     }
     const posts = await Post.find({}).sort('date'); // Re-fetch all posts
-    console.log('fechted all posts', posts)
-    res.redirect('posts/index', { posts })
+
+    res.render('posts/index', { posts })
 }

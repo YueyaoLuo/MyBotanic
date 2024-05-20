@@ -14,6 +14,8 @@
             <!-- where to show others posts/either followed or random popular posts -->
 
             <section class="others-posts">
+                <!-- to show posts in descending order by date/time  -->
+                <% posts.sort((a, b) => b.createdAt - a.createdAt) %>
                 <% posts.forEach(function(p) { %>
                     <!-- to jump onto the specific post with comments - show page -->
                     <a href="/<%= p._id %>/comments" class="post">
@@ -27,14 +29,14 @@
                             <%= p.content %>
                         </div>
                         <div class='part'>
-                            <% if (p.updatedAt !==p.createdAt) { %>
+                            <% if (p.updatedAt.getTime() != p.createdAt.getTime()) { %>
                                 <!-- to show either edit date or create date -->
                                 <p class="metadata post-time">
-                                    <%= p.updatedAt.toISOString().slice(0, 16) %> Edited
+                                    <%= p.updatedAt.toLocaleString().slice(0,23) %> Edited
                                 </p>
                                 <% } else { %>
                                     <p class="metadata post-time">
-                                        <%= p.createdAt.toISOString().slice(0, 16) %> Posted
+                                        <%= p.createdAt.toLocaleString().slice(0,23) %> Posted
                                     </p>
 
                                     <% } %>
