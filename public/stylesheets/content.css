@@ -1,42 +1,78 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-  }
-  
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Ensure body takes up at least the full viewport height */
-    margin: 0;
-  }
-  
-  main {
-    flex: 1; /* Allow the main content to grow and take up remaining space */
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* Ensure body takes up at least the full viewport height */
+  margin: 0;
+}
+
+main {
+  flex: 1;
+  /* Allow the main content to grow and take up remaining space */
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  opacity: 1;
+}
 
 
- .user-new-post {
-    margin: 50px;
-    border-radius:10px;
-    padding:20px;
-    background: rgb(139, 169, 139);
-    
+/* home page */
 
- }
+p{
+  color:black;
+}
+.user-new-post {
+  margin: 50px;
+  border-radius: 10px;
+  padding: 20px;
+  background: rgb(139, 169, 139);
 
- #new-post{
-   display: flex;
-   justify-content: center;
-   align-items: flex-end;
- }
- .new-input-box{
 
-    width: 800px;
- 
- }
- .create-post{
-   margin: 0 8px;
-    padding:2px 15px;
- }
+}
+
+#new-post {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.new-input-box {
+
+  width: 800px;
+
+}
+
+.create-post {
+  margin: 0 8px;
+  padding: 2px 15px;
+}
+
+#collection-title {
+  display: inline-block;
+}
+
+
+
+/* My plant collection page */
+#create-new-collection {
+  display: inline-block;
+  margin: 0 8px;
+  padding: 2px 15px;
+}
+
+#add-a-new-plant {
+  display: inline-block;
+  margin: 0 8px;
+  padding: 2px 15px;
+}

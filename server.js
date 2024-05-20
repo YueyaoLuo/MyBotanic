@@ -12,7 +12,8 @@ require('./config/database');
 require('./config/passport');
 
 var indexRouter = require('./routes/index');
-var postsRouter = require('./routes/home');
+var homePostsRouter = require('./routes/home');
+var plantCollectionRouter = require('./routes/plantCollection')
 
 
 var app = express();
@@ -45,7 +46,10 @@ app.use(function (req, res, next) {
 
 
 app.use('/', indexRouter);
-app.use('/home', postsRouter);
+app.use('/home', homePostsRouter);
+app.use('/plantCollection', plantCollectionRouter);
+
+
 //for logout purpose, redirect to home page 
 app.use('/logout', function(req, res){
   req.logout();

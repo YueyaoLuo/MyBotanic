@@ -6,9 +6,9 @@ const postsCtrl = require('../controllers/posts');
 
 
 router.get('/', postsCtrl.index);
-router.get('/', postsCtrl.create)
-router.post('/', ensureLoggedIn, postsCtrl.new)
-router.get('/:id/comments', ensureLoggedIn, postsCtrl.show) //to change after set up profile for each user, then should be '/username/postId/comments'
+router.get('/', ensureLoggedIn, postsCtrl.new)
+router.post('/', ensureLoggedIn, postsCtrl.create)
+router.get('/:id/comments',  postsCtrl.show) //to change after set up profile for each user, then should be '/username/postId/comments'
 
 
 module.exports = router;

@@ -10,7 +10,8 @@ module.exports = {
 
 async function index(req, res) {
     //to show posts in order by date/time
-    const posts = await Post.find({}).sort('date')
+    const posts = await Post.find({}).sort('date');
+    console.log('Fetched posts for index:', posts);
     res.render('posts/index', { posts })
 }
 
@@ -27,14 +28,19 @@ function Newpost(req, res) {
 
 async function create(req, res) {
     try {
-        const post = await Post.create(req.body);
-        const postCreatedate = post.createdAt;
-        const postEditdate = post.updatedAt;
-        const formattedCreateDate = postCreatedate.toISOString().slice(0, 16)
-        const formattedEditDate = postEditdate.toISOString().slice(0, 16)
-        res.render('posts/index', { post, formattedCreateDate, formattedEditDate })
+        const post = {
+            content: req.body.content,
+            user: req.user.id,
+            userName: req.user.name,
+            userAvatar:req.user.avatar,
+        }
+        console.log(post)
+        await Post.create(post);
+
     } catch (err) {
         console.error(err)
-        res.render('posts/index', { errorMsg: err.message })
     }
+    const posts = await Post.find({}).sort('date'); // Re-fetch all posts
+    console.log('fechted all posts', posts)
+    res.redirect('posts/index', { posts })
 }

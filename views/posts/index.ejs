@@ -2,45 +2,48 @@
 
     <!-- where user to create new post after logging in -->
     <%if(user){%>
-    <section class="user-new-post">
-        <form id="new-post" action="/home" method="POST">
-            <textarea class="new-input-box" name="content" placeholder="Share your thoughts on plantings"></textarea>
-            <input class="create-post" type="submit" value="Post">
-        </form>
-    </section>
-    <%}%>
+        <section class="user-new-post">
+            <form id="new-post" action="/home" method="POST">
+                <textarea class="new-input-box" name="content"
+                    placeholder="Share your thoughts on plantings"></textarea>
+                <input class="create-post" type="submit" value="Post">
+            </form>
+        </section>
+        <%}%>
 
-    <!-- where to show others posts/either followed or random popular posts -->
+            <!-- where to show others posts/either followed or random popular posts -->
 
-    <section class="others-posts">
-        <%posts.forEach(function(p){%>
-        <!--to jump onto the specific post with comments - show page-->
-        <a href="/<%p._id%>/comments>" class="post">
-            <div>
-                <img alt="avatar" src="<%= p.userAvatar %>">
-            </div>
-            <div>
-                <%=p.userName%>
-            </div>
-            <div>
-                <%=p.content%>
-            </div>
-            <%if (formattedEditDate) {%> 
-                <!-- to show either edit date or create date -->
-                <p>
-                    <%=formattedEditDate%> Edited
-                </p>
-                <%} else {%>
-                    <p>
-                        <%=formattedCreateDate%>
-                    </p>
-                    <%}%>
-                        <p>Like</p> /*to show like numbers*/
-                        <p>Share</p> /*to jump to another share page*/
-                        <br>
-                        <hr>
+            <section class="others-posts">
+                <% posts.forEach(function(p) { %>
+                    <!-- to jump onto the specific post with comments - show page -->
+                    <a href="/<%= p._id %>/comments" class="post">
+                        <div>
+                            <img alt="avatar" src="<%= p.userAvatar %>">
+                        </div>
+                        <div>
+                            <%= p.userName %>
+                        </div>
+                        <div>
+                            <%= p.content %>
+                        </div>
+                        <% if (p.updatedAt !== p.createdAt) { %>
+                            <!-- to show either edit date or create date -->
+                            <p>
+                                <%= p.updatedAt.toISOString().slice(0, 16) %> Edited
+                            </p>
+                        <% } else { %>
+                            <p>
+                                <%= p.createdAt.toISOString().slice(0, 16) %>
+                            </p>
+                        <% } %>
+                        <!-- to show like numbers -->
+                        <p>Share</p>
+                        <!-- to jump to another share page -->
+                        <p>Like</p>
                     </a>
-                        <%})%>
-    </section>
+                    <hr>
+                <% }) %>
+            </section>
+            
 
-    <%- include('../partials/footer') %>
+            <%- include('../partials/footer') %>

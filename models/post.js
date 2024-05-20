@@ -26,21 +26,21 @@ const postSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'Tag'
    }],
-      user: {
-         type: Schema.Types.ObjectId,
-         ref: 'User',
-         required: true
-      },
-      userName: String,
-      userAvatar: String,
-      location: {
-         type: { type: String },
-         coordinates: [Number]
-      },
-      photo: {
-         type: String,
-      }
+   user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+      required: true
+   },
+   userName: String,
+   userAvatar: String,
+   location: {
+      type: { type: String },
+      coordinates: [Number]
+   },
+   photo: {
+      type: String,
+   }
 
-   }, { timestamps: true });
+}, { timestamps: true });
 
 module.exports = mongoose.model('Post', postSchema);
