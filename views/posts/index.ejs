@@ -15,39 +15,43 @@
 
             <section class="others-posts">
                 <!-- to show posts in descending order by date/time  -->
-                <% posts.sort((a, b) => b.createdAt - a.createdAt) %>
-                <% posts.forEach(function(p) { %>
-                    <!-- to jump onto the specific post with comments - show page -->
-                    <a href="/<%= p._id %>/comments" class="post">
-                        <div class='part' id='user-profile'>
-                            <img alt="avatar" src="<%= p.userAvatar %>">
-                            <p id="user-name">
-                                <%= p.userName %>
-                            </p>
-                        </div>
-                        <div class='part' id="post-content">
-                            <%= p.content %>
-                        </div>
-                        <div class='part'>
-                            <% if (p.updatedAt.getTime() != p.createdAt.getTime()) { %>
-                                <!-- to show either edit date or create date -->
-                                <p class="metadata post-time">
-                                    <%= p.updatedAt.toLocaleString().slice(0,23) %> Edited
+                <% posts.sort((a, b)=> b.createdAt - a.createdAt) %>
+                    <% posts.forEach(function(p) { %>
+                        <!-- to jump onto the specific post with comments - show page -->
+                        <a href="/<%= p._id %>/comments" class="post">
+                            <div class='part' id='user-profile'>
+                                <img alt="avatar" src="<%= p.userAvatar %>">
+                                <p id="user-name">
+                                    <%= p.userName %>
                                 </p>
-                                <% } else { %>
+                            </div>
+                            <div class='part' id="post-content">
+                                <%= p.content %>
+                            </div>
+                            <div class='part'>
+                                <% if (p.updatedAt.getTime() !=p.createdAt.getTime()) { %>
+                                    <!-- to show either edit date or create date -->
                                     <p class="metadata post-time">
-                                        <%= p.createdAt.toLocaleString().slice(0,23) %> Posted
+                                        <%= p.updatedAt.toLocaleString().slice(0,23) %> Edited
                                     </p>
+                                    <% } else { %>
+                                        <p class="metadata post-time">
+                                            <%= p.createdAt.toLocaleString().slice(0,23) %> Posted
+                                        </p>
 
-                                    <% } %>
-                                        <!-- to show like numbers -->
-                                        <p class="metadata">Share</p>
-                                        <!-- to jump to another share page -->
-                                        <p class="metadata">Like</p>
-                        </div>
-                    </a>
-                    <hr>
-                    <% }) %>
+                                        <% } %>
+                                            <!-- to show like numbers -->
+                                            
+                                                <p class="metadata icons"><ion-icon name="heart-outline"></ion-icon>Like</p>
+                                            
+                                            <!-- to jump to another share page -->
+                                            
+                                            <p class="metadata icons"><ion-icon name="share-outline"></ion-icon>Share</p>
+                                            
+                            </div>
+                        </a>
+                        <hr>
+                        <% }) %>
             </section>
 
 

@@ -9,7 +9,7 @@ module.exports = {
 }
 
 async function index(req, res) {
-    //to show posts in descending order by date/time
+    
     const posts = await Post.find({});
     console.log('Fetched posts for index:', posts); //test if it is reading post
     res.render('posts/index', { posts })
