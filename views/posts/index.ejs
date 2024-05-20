@@ -17,33 +17,36 @@
                 <% posts.forEach(function(p) { %>
                     <!-- to jump onto the specific post with comments - show page -->
                     <a href="/<%= p._id %>/comments" class="post">
-                        <div>
+                        <div class='part' id='user-profile'>
                             <img alt="avatar" src="<%= p.userAvatar %>">
+                            <p id="user-name">
+                                <%= p.userName %>
+                            </p>
                         </div>
-                        <div>
-                            <%= p.userName %>
-                        </div>
-                        <div>
+                        <div class='part' id="post-content">
                             <%= p.content %>
                         </div>
-                        <% if (p.updatedAt !== p.createdAt) { %>
-                            <!-- to show either edit date or create date -->
-                            <p>
-                                <%= p.updatedAt.toISOString().slice(0, 16) %> Edited
-                            </p>
-                        <% } else { %>
-                            <p>
-                                <%= p.createdAt.toISOString().slice(0, 16) %>
-                            </p>
-                        <% } %>
-                        <!-- to show like numbers -->
-                        <p>Share</p>
-                        <!-- to jump to another share page -->
-                        <p>Like</p>
+                        <div class='part'>
+                            <% if (p.updatedAt !==p.createdAt) { %>
+                                <!-- to show either edit date or create date -->
+                                <p class="metadata post-time">
+                                    <%= p.updatedAt.toISOString().slice(0, 16) %> Edited
+                                </p>
+                                <% } else { %>
+                                    <p class="metadata post-time">
+                                        <%= p.createdAt.toISOString().slice(0, 16) %> Posted
+                                    </p>
+
+                                    <% } %>
+                                        <!-- to show like numbers -->
+                                        <p class="metadata">Share</p>
+                                        <!-- to jump to another share page -->
+                                        <p class="metadata">Like</p>
+                        </div>
                     </a>
                     <hr>
-                <% }) %>
+                    <% }) %>
             </section>
-            
+
 
             <%- include('../partials/footer') %>

@@ -20,6 +20,7 @@ main {
 
 a {
   color: black;
+  cursor: pointer;
 }
 
 a:hover {
@@ -27,7 +28,7 @@ a:hover {
 }
 
 
-/* home page */
+/* home page - posts*/
 
 p{
   color:black;
@@ -40,7 +41,7 @@ p{
 
 
 }
-
+/* new post */
 #new-post {
   display: flex;
   justify-content: center;
@@ -58,13 +59,52 @@ p{
   padding: 2px 15px;
 }
 
+
+/* all posts */
+
+.others-posts {
+  display: flex;
+  flex-direction: column;
+}
+.post{
+    display: flex;
+    flex-direction: column
+}
+.part{
+  flex:1
+}
+
+#user-profile img {
+  height: 36px;
+  border-radius: 50%; /* Make it circular */
+}
+#user-profile p {
+  display:inline-block;
+  padding-left: 10px;
+}
+#post-content {
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 5px 0;
+}
+/* Style for post metadata (like date) */
+.metadata {
+  font-size: 12px;
+  color: #888;
+  padding: 0 12px;
+  display: inline-block;
+}
+
+.post-time{
+  padding-left: 0px;
+}
+
+/* My plant collection page */
+
 #collection-title {
   display: inline-block;
 }
 
-
-
-/* My plant collection page */
 #create-new-collection {
   display: inline-block;
   margin: 0 8px;
