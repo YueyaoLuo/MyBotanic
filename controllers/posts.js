@@ -2,23 +2,17 @@ const Post = require('../models/post')
 
 module.exports = {
     index,
-    show,
     new: Newpost,
     create,
+    show,
 
 }
 
 async function index(req, res) {
     
     const posts = await Post.find({});
-    console.log('Fetched posts for index:', posts); //test if it is reading post
+    // console.log('Fetched posts for index:', posts); //test if it is reading post
     res.render('posts/index', { posts })
-}
-
-async function show(req, res) {
-    const post = await Post.findById(req.params.id);
-    res.render('posts/show', { post })
-    // to send time for post and comments
 }
 
 
@@ -42,4 +36,17 @@ async function create(req, res) {
     const posts = await Post.find({}).sort('date'); // Re-fetch all posts
 
     res.render('posts/index', { posts })
+}
+
+async function show(req, res) {
+    try {
+        const post = await Post.findById(req.params.id);
+        if (!post) {
+            return res.send('Post not found');
+        }
+        console.log('this is post info:', post);
+        res.render('posts/show', { post });
+    } catch (error) {
+        console.error('Error fetching post:', error);
+    }
 }
