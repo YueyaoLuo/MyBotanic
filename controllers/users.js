@@ -1,21 +1,22 @@
 const User = require('../models/user')
 
 module.exports = {
-    index, //profile page
+    show, //profile page
 
 }
 
-async function index(req, res) {
+async function show(req, res) {
     try {
-        console.log('Request received:', req.params.name);
-        const user = await User.findOne({name: req.params.name});
+        console.log('Request received:', req.user._id);
+        const user = await User.findById(req.user._id);
         if (user) {
             console.log(user)
             const userProfile = {
                 userName: user.name,
                 userAvatar: user.avatar,
             }
-            res.render('profiles/index', { userProfile })
+            console.log(userProfile)
+            res.render('users/show', { userProfile })
         } else {
             res.send('User not found')
         }
@@ -23,5 +24,3 @@ async function index(req, res) {
         console.error('Error fetching user:', error);
     }
 }
-
-

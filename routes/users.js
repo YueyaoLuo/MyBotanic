@@ -7,7 +7,7 @@ const usersCtrl = require('../controllers/users');
 
 // show users profile home page
 
-router.get('/:name', ensureLoggedIn, usersCtrl.index)
+router.get('/:id', ensureLoggedIn, usersCtrl.show)
 
 
 module.exports = router;

@@ -13,7 +13,8 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var homePostsRouter = require('./routes/home');
-var usersRouter = require('./routes/users')
+var usersRouter = require('./routes/users');
+
 var plantCollectionRouter = require('./routes/plantCollection')
 
 
@@ -40,6 +41,7 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
 app.use(function (req, res, next) {
   res.locals.user = req.user;
   next();
@@ -49,6 +51,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRouter);
 app.use('/home', homePostsRouter);
 app.use('/users', usersRouter);
+
 app.use('/plantCollection', plantCollectionRouter);
 
 
