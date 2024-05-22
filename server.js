@@ -14,8 +14,9 @@ require('./config/passport');
 var indexRouter = require('./routes/index');
 var homePostsRouter = require('./routes/home');
 var usersRouter = require('./routes/users');
-
-var plantCollectionRouter = require('./routes/plantCollection')
+var postsRouter = require('./routes/posts'); 
+const commentsRouter = require('./routes/comments');
+var plantCollectionRouter = require('./routes/plantCollection');
 
 
 var app = express();
@@ -51,7 +52,8 @@ app.use(function (req, res, next) {
 app.use('/', indexRouter);
 app.use('/home', homePostsRouter);
 app.use('/users', usersRouter);
-
+app.use('/posts', postsRouter);
+app.use('/', commentsRouter)
 app.use('/plantCollection', plantCollectionRouter);
 
 

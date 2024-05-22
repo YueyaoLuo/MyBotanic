@@ -18,7 +18,7 @@
                 <% posts.sort((a, b)=> b.createdAt - a.createdAt) %>
                     <% posts.forEach(function(p) { %>
                         <!-- to jump onto the specific post with comments - show page -->
-                        <a href="/<%= p._id %>" class="post">
+                        <a href="/posts/<%= p._id %>" class="post">
                             <div class='part' id='user-profile'>
                                 <img alt="avatar" src="<%= p.userAvatar %>">
                                 <p id="user-name">
@@ -32,7 +32,7 @@
                             <div class='part'>
                                  <!-- to jump onto the specific post with comments - show page -->
                                 <p class="metadata icons"><ion-icon name="chatbox-outline"></ion-icon><a
-                                        href='/<%= p._id %>'>Comment</a> </p>
+                                        href='/posts/<%= p._id %>'>Comments</a> </p>
 
                                 <!-- to show like numbers -->
 

@@ -40,6 +40,7 @@ async function create(req, res) {
 
 async function show(req, res) {
     try {
+        console.log(req.params)
         const post = await Post.findById(req.params.id);
         if (!post) {
             return res.send('Post not found');
