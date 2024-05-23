@@ -1,12 +1,35 @@
 <%- include('../partials/header') %>
 
     <h2 id="collection-title">My Plant Collections</h2>
-    <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
-    <button id='create-new-collection' type="submit">Create a new collection</button>
-</form>
-<form>
-    <button id="add-a-new-plant" type="submit">Add a new plant</button>
-</form>
+    <button id='createBtn'>Create a new collection</button>
+    <!-- The Modal -->
+    <!-- for creating a collection -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="popup-form" action="/collections" method="POST">
+                <h4>Create a Collection</h4>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" class="input-field" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" class="input-field"></textarea>
+                </div>
+                <div class="form-group">
+                    <button id="popup-btn" type="submit" class="create-btn">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+
+
+
+    <form>
+        <button id="add-a-new-plant" type="submit">Add a new plant</button>
+    </form>
     <% if (plantCollections.length) { %>
         <% plantCollections.forEach(function(c) { %>
             <div class="image-board">
@@ -20,7 +43,7 @@
             </p>
             <% }); %>
                 <% } else { %>
-                    <p>No plant collections yet</p>
+                    <p>No plant collection yet</p>
                     <% } %>
 
                         <%- include('../partials/footer') %>
