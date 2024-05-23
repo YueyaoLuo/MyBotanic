@@ -7,7 +7,10 @@ const commentsCtrl = require('../controllers/comments');
 
 // show post details and all comments
 
-router.post('/posts/:id', ensureLoggedIn, commentsCtrl.create)
+//create comments
+router.post('/posts/:id/comments', ensureLoggedIn, commentsCtrl.create)
+router.delete('/comments/:id', ensureLoggedIn, commentsCtrl.delete)
+
 
 
 module.exports = router;

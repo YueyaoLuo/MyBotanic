@@ -7,7 +7,7 @@ module.exports = {
 
 async function show(req, res) {
     try {
-        console.log('Request received:', req.user._id);
+        // console.log('Request received:', req.user._id);
         const user = await User.findById(req.user._id);
         if (user) {
             console.log(user)
@@ -15,7 +15,7 @@ async function show(req, res) {
                 userName: user.name,
                 userAvatar: user.avatar,
             }
-            console.log(userProfile)
+            // console.log(userProfile)
             res.render('users/show', { userProfile })
         } else {
             res.send('User not found')

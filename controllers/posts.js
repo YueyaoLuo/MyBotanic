@@ -5,7 +5,9 @@ module.exports = {
     new: Newpost,
     create,
     show,
-
+    edit,
+    update,
+    delete: Deletepost
 }
 
 async function index(req, res) {
@@ -50,4 +52,42 @@ async function show(req, res) {
     } catch (error) {
         console.error('Error fetching post:', error);
     }
+}
+
+
+async function edit(req, res){
+
+    const post = await Post.findById(req.params.id);
+    // Redirect back to the post's show view
+    res.render('posts/edit', {title: 'Edit post', post});
+}
+
+
+async function update(req, res){
+    try{
+        const post = await Post.findById(req.params.id);
+
+        if (!post) return res.redirect('/home');
+      
+        const updatedContent = req.body //get object {content: req.body}
+        console.log("This is the udpated post content", updatedContent)
+        post.content = updatedContent.content
+
+        await post.save()
+        console.log('this is the updated post:', post)
+        res.redirect(`/posts/${post._id}`)
+    }catch (err) {
+      console.log(err);
+    }
+}
+
+
+async function Deletepost(req, res){
+    const post = await Post.findById(req.params.id);
+    console.log(post)
+    if (!post) return res.redirect('/home');
+
+    // await post.remove();
+    await Post.findByIdAndDelete(req.params.id);
+    res.redirect('/home')
 }
