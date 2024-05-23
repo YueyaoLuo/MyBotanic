@@ -72,22 +72,35 @@ p{
     flex-direction: column
 }
 .part{
-  flex:1
+  flex:1;
 }
 
-#user-profile img {
-  height: 36px;
+.user-profile img {
+  width: 48px;
+  height: auto;
   border-radius: 50%; /* Make it circular */
 }
-#user-profile p {
+.user-profile-big img {
+  width: 64px;
+  height: auto;
+  border-radius: 50%; /* Make it circular */
+}
+.user-profile p {
   display:inline-block;
   padding-left: 10px;
 }
-#post-content {
+.user-profile h4 {
+  display:inline-block;
+  
+}
+
+.content {
   font-size: 18px;
   line-height: 1.5;
-  padding: 5px 0;
+  padding: 10px 0;
 }
+
+
 /* Style for post metadata (like date) */
 .metadata {
   font-size: 14px;
@@ -96,11 +109,25 @@ p{
   display: inline-block;
 }
 
+.metadata a{
+  font-size: 14px;
+  color: #888;
+  display: inline-block;
+}
+
 .icons{
   color:forestgreen;
   font-size: 16px;
   padding-left: 0px;
 }
+.icons ion-icon{
+  color:forestgreen;
+  font-size: 16px;
+  padding-left: 0px;
+  vertical-align: middle;
+}
+
+
 
 .icons a{
   color:forestgreen;
@@ -109,10 +136,31 @@ p{
   padding-left: 0px;
 }
 
+
 .post-time{
   padding-left: 0px;
   align-items: flex-start;
 }
+
+.time{
+  display: inline-block;
+}
+
+.del-btn{
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* My profile page */
+h4{
+  padding-left: 12px;;
+}
+
+
 
 /* My plant collection page */
 

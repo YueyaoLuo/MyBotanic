@@ -19,13 +19,13 @@
                     <% posts.forEach(function(p) { %>
                         <!-- to jump onto the specific post with comments - show page -->
                         <a href="/posts/<%= p._id %>" class="post">
-                            <div class='part' id='user-profile'>
+                            <div class='part user-profile'>
                                 <img alt="avatar" src="<%= p.userAvatar %>">
                                 <p id="user-name">
                                     <%= p.userName %>
                                 </p>
                             </div>
-                            <div class='part' id="post-content">
+                            <div class="part content">
                                 <%= p.content %>
                             </div>
 
@@ -36,7 +36,7 @@
 
                                 <!-- to show like numbers -->
 
-                                <p class="metadata icons"><ion-icon name="heart-outline"></ion-icon>Like</p>
+                                <p class="metadata icons icon-container"><ion-icon name="heart-outline"></ion-icon>Like</p>
 
                                 <!-- to jump to another share page -->
 

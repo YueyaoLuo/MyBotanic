@@ -1,5 +1,26 @@
 <%- include('../partials/header') %>
-<h2 id="collection-title">My Plant Collections</h2>
-<button id='create-new-collection' type="sumbit">Create a new collection</button>
-<button id="add-a-new-plant" type="sumbit">Add a new plant</button>
-<%- include('../partials/footer') %>
+
+    <h2 id="collection-title">My Plant Collections</h2>
+    <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+    <button id='create-new-collection' type="submit">Create a new collection</button>
+</form>
+<form>
+    <button id="add-a-new-plant" type="submit">Add a new plant</button>
+</form>
+    <% if (plantCollections.length) { %>
+        <% plantCollections.forEach(function(c) { %>
+            <div class="image-board">
+                <%= c.photo %>
+            </div>
+            <p>
+                <%= c.collectionName %>
+            </p>
+            <p>
+                <%= c.plants.length %> plants
+            </p>
+            <% }); %>
+                <% } else { %>
+                    <p>No plant collections yet</p>
+                    <% } %>
+
+                        <%- include('../partials/footer') %>

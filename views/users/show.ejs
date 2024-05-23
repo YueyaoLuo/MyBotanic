@@ -1,14 +1,15 @@
 <!-- to show requested users profile page -->
 <%- include('../partials/header') %>
-<section class="user-info">
-    <div>
-        <img alt="avatar" src="<%= userProfile.userAvatar %>">
-    </div>
-    <div>
-        <%=userProfile.userName%>
-    </div>
-    <div>
-        <!-- to be added users posts and public plant collections -->
-    </div>
+    <section class="user-info">
+        <div class="user-profile user-profile-big">
+            <img alt="avatar" src="<%= userProfile.userAvatar %>">
 
-<%- include('../partials/footer') %>
+            <h4>
+                <%=userProfile.userName%>
+            </h4>
+        </div>
+        <div>
+            <!-- to be added users posts and public plant collections -->
+        </div>
+
+        <%- include('../partials/footer') %>

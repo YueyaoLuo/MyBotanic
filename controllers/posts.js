@@ -42,12 +42,12 @@ async function create(req, res) {
 
 async function show(req, res) {
     try {
-        console.log(req.params)
+        // console.log(req.params)
         const post = await Post.findById(req.params.id);
         if (!post) {
             return res.send('Post not found');
         }
-        console.log('this is post info:', post);
+        // console.log('this is post info:', post);
         res.render('posts/show', { post });
     } catch (error) {
         console.error('Error fetching post:', error);
@@ -87,7 +87,7 @@ async function Deletepost(req, res){
     console.log(post)
     if (!post) return res.redirect('/home');
 
-    // await post.remove();
     await Post.findByIdAndDelete(req.params.id);
     res.redirect('/home')
 }
+
