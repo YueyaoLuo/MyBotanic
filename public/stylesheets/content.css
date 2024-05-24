@@ -28,6 +28,20 @@ a:hover {
   opacity: 1;
 }
 
+.btn{
+  border-radius: 10px;
+  background-color: green;
+  color: white;
+  margin: 0 8px;
+  padding: 2px 15px;
+  cursor: pointer;
+}
+
+
+.input-field{
+  border-radius: 10px;
+  flex-grow: 1;
+}
 
 /* home page - posts*/
 
@@ -50,7 +64,7 @@ p{
 }
 
 .new-input-box {
-
+  border-radius: 10px;
   width: 800px;
 
 }
@@ -100,7 +114,6 @@ p{
   padding: 10px 0;
 }
 
-
 /* Style for post metadata (like date) */
 .metadata {
   font-size: 14px;
@@ -136,6 +149,12 @@ p{
   padding-left: 0px;
 }
 
+/* comments on post show page */
+#add-comment-form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
 
 .post-time{
   padding-left: 0px;
@@ -155,6 +174,10 @@ p{
   cursor: pointer;
 }
 
+
+
+
+
 /* My profile page */
 h4{
   padding-left: 12px;;
@@ -168,31 +191,27 @@ h4{
   display: inline-block;
 }
 
+
+/* for create a new collection */
 #create-new-collection {
   display: inline-block;
   margin: 0 8px;
   padding: 2px 15px;
 }
 
-#add-a-new-plant {
-  display: inline-block;
-  margin: 0 8px;
-  padding: 2px 15px;
-}
 
 /* modal */
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
+  width: 100%;
+  height: 100%; 
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
@@ -234,15 +253,41 @@ h4{
   margin-right: 10px;
 }
 
-.input-field {
-  flex-grow: 1;
+/* boards */
+.board-collections{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
 }
 
-.create-btn {
-  background-color: green;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
-  
+.board-container{
+  padding: 20px;
+}
+
+.board-cover {
+  border: 2px solid green;
+  border-radius: 24px;
+}
+
+.photo img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.board-text {
+  color:#000;
+  padding: 5px 0;
+}
+
+.board-text p{
+  text-align: left;
+}
+
+
+/* for adding a new plant */
+#add-a-new-plant {
+  display: inline-block;
+
 }
