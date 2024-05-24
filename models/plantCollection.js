@@ -43,7 +43,7 @@ const plantCollectionSchema = new Schema({
     },
     photo: {
         type: String,
-        default: "/images/logo.png" //path to default image file
+        default: "/images/logo.png" //path to default image file as collection cover
     },
     plants: {
        plantSchema
