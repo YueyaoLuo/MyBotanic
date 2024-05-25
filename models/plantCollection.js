@@ -7,7 +7,8 @@ const plantSchema = new Schema({
         type: String
     },
     commonName: {
-        type: String
+        type: String,
+        required: true
     },
     matureHeight: {
         type: Number
@@ -26,7 +27,7 @@ const plantSchema = new Schema({
     Notes: String,
     plantPhoto: {
         type: String,
-        default: "/images/logo.png"
+        default: "/images/tea-leaves.png"
     }
 }, { timestamps: true });
 

@@ -9,12 +9,12 @@
     </div>
 
 
-
+<!-- show all plants with photo and name -->
     <div class="board-collections plant-collections">
         <% if(plantCollection.plants && plantCollection.plants.length> 0){%>
             <%plantCollection.plants.forEach(function(p){%>
-
                 <div class="board-container photo-container">
+                    <a href="/plantCollections/<%=plantCollection._id%>/plants/<%=p._id%>">
                     <div class="board-cover photo">
                         <img src="<%=p.plantPhoto%>" alt="plant photo">
                     </div>

@@ -43,7 +43,6 @@ async function show(req, res) {
             return res.send('plantCollection not found');
         }
         const plants = plantCollection.plants
-        console.log(plants)
         res.render('plantCollections/show', { plantCollection, plants });
     } catch (error) {
         console.error('Error fetching post:', error);
