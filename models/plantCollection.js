@@ -9,24 +9,26 @@ const plantSchema = new Schema({
     commonName: {
         type: String
     },
-    matureHeight:{
+    matureHeight: {
         type: Number
     },
-    matureWidth:{
+    matureWidth: {
         type: Number
     },
-    plantType:{
+    plantType: {
         type: String,
-        enum: ['Tree', 'Shrub', 'Groundcover', 'Tufting','Succulent']
+        enum: ['Tree', 'Shrub', 'Groundcover', 'Tufting', 'Succulent']
     },
     Native: {
-        type: Boolean, 
+        type: Boolean,
         default: true
     },
-    Notes: {
-        type: String
+    Notes: String,
+    plantPhoto: {
+        type: String,
+        default: "/images/logo.png"
     }
-},{timestamps: true});
+}, { timestamps: true });
 
 const plantCollectionSchema = new Schema({
     user: {
@@ -45,9 +47,9 @@ const plantCollectionSchema = new Schema({
         type: String,
         default: "/images/logo.png" //path to default image file as collection cover
     },
-    plants: {
-       plantSchema
-    }
+    plants: [
+        plantSchema
+   ]
 
 }, { timestamps: true })
 

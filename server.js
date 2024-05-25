@@ -16,8 +16,8 @@ var homePostsRouter = require('./routes/home');
 var usersRouter = require('./routes/users');
 var postsRouter = require('./routes/posts'); 
 const commentsRouter = require('./routes/comments');
-var plantCollectionRouter = require('./routes/plantCollection');
-
+var plantCollectionRouter = require('./routes/plantCollections');
+var plantsRouter = require('./routes/plants')
 
 var app = express();
 
@@ -54,7 +54,8 @@ app.use('/home', homePostsRouter);
 app.use('/users', usersRouter);
 app.use('/posts', postsRouter);
 app.use('/', commentsRouter)
-app.use('/plantCollection', plantCollectionRouter);
+app.use('/plantCollections', plantCollectionRouter);
+app.use('/', plantsRouter)
 
 
 //for logout purpose, redirect to home page 

@@ -2,7 +2,8 @@ const PlantCollection = require('../models/plantCollection')
 
 module.exports = {
     index,
-    create
+    create,
+    show,
 }
 async function index(req, res) {
 
@@ -32,4 +33,19 @@ async function create(req, res) {
 
     const plantCollections = await PlantCollection.find({user: req.user._id});
     res.render('plantCollections/index', { plantCollections })
+}
+
+async function show(req, res) {
+    try {
+        // console.log(req.params)
+        const plantCollection = await PlantCollection.findById(req.params.id);
+        if (!plantCollection) {
+            return res.send('plantCollection not found');
+        }
+        const plants = plantCollection.plants
+        console.log(plants)
+        res.render('plantCollections/show', { plantCollection, plants });
+    } catch (error) {
+        console.error('Error fetching post:', error);
+    }
 }

@@ -1,0 +1,40 @@
+<%- include('../partials/header') %>
+    <div class="title-container">
+        <h2>
+            <%= plantCollection.collectionName %>
+        </h2>
+        <form action="/plantCollections/<%=plantCollection._id%>/plants/new">
+            <button class="create-btn btn" type="submit">Add a new plant</button>
+        </form>
+    </div>
+
+
+
+    <div class="board-collections plant-collections">
+        <% if(plantCollection.plants && plantCollection.plants.length> 0){%>
+            <%plantCollection.plants.forEach(function(p){%>
+
+                <div class="board-container photo-container">
+                    <div class="board-cover photo">
+                        <img src="<%=p.plantPhoto%>" alt="plant photo">
+                    </div>
+                    <div class="metadata board-text">
+                        <%if (p.botanicalName && p.commonName){%>
+                            <p><i>
+                                    <%=p.botanicalName%>
+                                </i> / <%=p.commonName%>
+                            </p>
+                            <%} else {%>
+                                <p>
+                                    <%=p.commonName%>
+                                </p>
+                                <%}%>
+                    </div>
+                </div>
+
+                <% }) %>
+    </div>
+    <% } else { %>
+        <p>No plant yet</p>
+        <% } %>
+            <%- include('../partials/footer') %>

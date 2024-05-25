@@ -8,7 +8,7 @@
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <form id="popup-form" action="/plantCollection" method="POST">
+            <form id="popup-form" action="/plantCollections" method="POST">
                 <h4>Create a Collection</h4>
                 <div class="form-group">
                     <label for="name">Name:</label>
@@ -26,41 +26,35 @@
     </div>
 
 
-
-
-    <form action="">
-        <button id="add-a-new-plant" class="create-btn" type="submit">Add a new plant</button>
-    </form>
-
-
     <!-- show all collections of the user -->
     <% if (plantCollections.length) { %>
         <div class="board-collections">
             <% plantCollections.forEach(function(c) { %>
-
                 <div class="board-container">
-                    <!-- board cover -->
-                    <div class="board-cover photo">
-                        <img src=<%=c.photo %> alt="Collection cover">
-                    </div>
-                    <!-- board text -->
-                    <div class="metadata board-text">
-                        <h5>
-                            <%= c.collectionName %>
-                        </h5>
+                    <a href="/plantCollections/<%=c._id%>">
+                        <!-- board cover -->
+                        <div class="board-cover photo">
+                            <img src=<%=c.photo %> alt="Collection cover">
+                        </div>
+                        <!-- board text -->
+                        <div class="metadata board-text">
+                            <h5>
+                                <%= c.collectionName %>
+                            </h5>
 
 
-                        <% if(c.plants.length) { %>
+                            <% if(c.plants.length) { %>
 
-                            <p>
-                                <%= c.plants.length %> plants
-                            </p>
+                                <p>
+                                    <%= c.plants.length %> plants
+                                </p>
 
-                            <%} else {%>
-                                <p> 0 plant</p>
+                                <%} else {%>
+                                    <p> 0 plant</p>
 
-                                <%}%>
-                    </div>
+                                    <%}%>
+                        </div>
+                    </a>
                 </div>
                 <% }) %>
         </div>

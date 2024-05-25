@@ -49,13 +49,12 @@ p{
   color:black;
 }
 .user-new-post {
-  margin: 50px 0;
+  margin: 20px 0;
   border-radius: 10px;
   padding: 20px;
   background: rgb(139, 169, 139);
-
-
 }
+
 /* new post */
 #new-post {
   display: flex;
@@ -175,7 +174,12 @@ p{
 }
 
 
-
+/* update post */
+#edit-form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
 
 
 /* My profile page */
@@ -287,7 +291,79 @@ h4{
 
 
 /* for adding a new plant */
-#add-a-new-plant {
-  display: inline-block;
-
+.title-container {
+  display: flex;
+  align-items: center; 
 }
+
+.title-container h2 {
+  margin: 0;
+  margin-right: 10px; 
+}
+
+.title-container form {
+  margin: 0; 
+}
+
+#new-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.plant-info-row {
+  margin-bottom: 15px;
+}
+
+.plant-info-row label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.plant-info-row input,
+.plant-info-row select,
+.plant-info-row {
+  margin-bottom: 15px;
+}
+
+.plant-info-row label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.plant-info-row input,
+.plant-info-row select,
+.plant-info-row textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.plant-info-row textarea {
+  height: 100px;
+}
+
+.native-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.native-row label {
+  margin-bottom: 0;
+  margin-right: 20px;
+  font-weight: bold;
+}
+

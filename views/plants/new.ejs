@@ -1,0 +1,46 @@
+<%- include('../partials/header') %>
+    <h2>Add a plant</h2>
+
+    <!-- user to input plant info -->
+    <div class="form-container">
+        <form id="new-form" action="/plantCollections/<%=plantCollection._id%>" method="POST">
+            <div class="plant-info-row">
+                <label>Botanical Name:</label>
+                <input type="text" name="botanicalName">
+            </div>
+            <div class="plant-info-row">
+                <label>Common Name:</label>
+                <input type="text" name="commonName">
+            </div>
+            <div class="plant-info-row">
+                <label>Mature Height:</label>
+                <input type="text" placeholder="In meter" name="matureHeight">
+            </div>
+            <div class="plant-info-row">
+                <label>Mature Width:</label>
+                <input type="text" placeholder="In meter" name="matureWidth">
+            </div>
+            <div class="plant-info-row">
+                <label>Plant Type:</label>
+                <select name="plantType">
+                    <option value="Tree">Tree</option>
+                    <option value="Shrub">Shrub</option>
+                    <option value="Groundcover">Groundcover</option>
+                    <option value="Tufting">Tufting</option>
+                    <option value="Succulent">Succulent</option>
+                </select>
+            </div>
+            <div class="native-row">
+                <label>Native:</label>
+                <input type="checkbox" name="Native" id="Native">
+            </div>
+            <div class="plant-info-row">
+                <label>Notes:</label>
+                <textarea class="input-field" type="text" name="Notes"></textarea>
+            </div>
+            
+            <input class="btn" type="submit" value="Add plant">
+    </div>
+   
+    <div><img src="<%=plantCollection.plants.Photo%>" alt="plant photo"></div>
+    <%- include('../partials/footer') %>
