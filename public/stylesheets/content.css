@@ -266,14 +266,23 @@ h4{
 
 .board-container{
   padding: 20px;
+  display: flex;
+  flex-direction: column; /* Arrange items in a column */
+  align-items: center; /* Center items horizontally */
+  justify-content: space-between; /* Distribute space evenly */
 }
 
-.board-cover {
+.board-cover.photo {
+  width: 100%;
+  height: 313px;
   border: 2px solid green;
   border-radius: 24px;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
 }
 
-.photo img {
+.board-cover.photo img {
   object-fit: cover;
   height: 100%;
   width: 100%;
@@ -370,4 +379,33 @@ h4{
 
 .plant-info-row p{
   text-align: start;
+}
+
+
+.drop-zone {
+  height: 200px;
+  border: 2px dashed #cccccc;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  color: #cccccc;
+  cursor: pointer;
+}
+
+.drop-zone.dragover {
+  border-color: green;
+  color: green;
+}
+
+.drop-zone input[type="file"] {
+  display: none;
+}
+
+.plant-img{
+  width: 512px;
+  /* height:512px; */
 }

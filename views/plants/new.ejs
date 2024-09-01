@@ -3,7 +3,7 @@
 
     <!-- user to input plant info -->
     
-        <form id="new-form" action="/plantCollections/<%=plantCollection._id%>" method="POST">
+        <form id="new-form" action="/plantCollections/<%=plantCollection._id%>" method="POST" enctype="multipart/form-data">
             <div class="form-container col">
                 <div class="p-3">
                     <div class="plant-info-row">
@@ -45,7 +45,7 @@
             </div>
             <div class="form-container col">
                 <div class="plant-info-row">
-                    <img src="<%=plantCollection.plants.Photo%>" alt="plant photo">
+                    <input type="file" name="plantPhoto">
                 </div>
                 <input class="btn" type="submit" value="Add plant">
             </div>
