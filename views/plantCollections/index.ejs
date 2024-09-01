@@ -33,27 +33,33 @@
                 <div class="board-container">
                     <a href="/plantCollections/<%=c._id%>">
                         <!-- board cover -->
-                        <div class="board-cover photo">
-                            <img src=<%=c.photo %> alt="Collection cover">
-                        </div>
-                        <!-- board text -->
-                        <div class="metadata board-text">
-                            <h5>
-                                <%= c.collectionName %>
-                            </h5>
+                        <% if (c.plants.length) { %>
+                            <div class="board-cover photo">
+                                <img src=<%=c.plants[0].plantPhoto %> alt="Collection cover">
+                            </div>
+                            <%} else {%>
+                                <div class="board-cover photo">
+                                    <img src=<%=c.photo %> alt="Collection cover">
+                                </div>
+                                <%}%>
+                                    <!-- board text -->
+                                    <div class="metadata board-text">
+                                        <h5>
+                                            <%= c.collectionName %>
+                                        </h5>
 
 
-                            <% if(c.plants.length) { %>
+                                        <% if(c.plants.length) { %>
 
-                                <p>
-                                    <%= c.plants.length %> plants
-                                </p>
+                                            <p>
+                                                <%= c.plants.length %> plants
+                                            </p>
 
-                                <%} else {%>
-                                    <p> 0 plant</p>
+                                            <%} else {%>
+                                                <p> 0 plant</p>
 
-                                    <%}%>
-                        </div>
+                                                <%}%>
+                                    </div>
                     </a>
                 </div>
                 <% }) %>
