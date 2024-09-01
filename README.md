@@ -1,8 +1,11 @@
 ## App Title: MyBotanic
 
-## Project background:
+## Project background and overview:
+As a landscape architect, my daily work involves designing open spaces that are both functional and aesthetically pleasing. A critical aspect of this work is having an in-depth knowledge of various plants and their uses in different environments. Recognizing the importance of this knowledge, I identified a need for landscape architects to have access to a dedicated platform where they can curate their own plant collections tailored to specific design needs.
 
-## Project overview:
+The challenge often arises when encountering unfamiliar plant species, which can be a stumbling block due to the limitations of our individual knowledge. This led to the idea of creating a platform with social features, allowing users to share observations and thoughts with their peers. By leveraging collective knowledge and experience, users can quickly identify unknown species, share insights, and expand their understanding of the diverse plant world. 
+
+This community-driven resource is designed to foster collaboration and learning among both professionals and those with a passion for planting.
 
 ## Technology Stack: 
 Node.js + EJS + Bootstrap + MongoDB + AWS S3
@@ -13,6 +16,14 @@ Node.js + EJS + Bootstrap + MongoDB + AWS S3
 - [Deployed app](https://mybontanic.onrender.com/home)
 
 ## Screenshots:
+Create and edit post</br>
+![gif](./public/gif/Create%20post.gif)
+Create and delete comment</br>
+![gif](./public/gif/create%20comment.gif)
+Create plant collection</br>
+![gif](./public/gif/create%20collection.gif)
+Add a plant to collection</br>
+![gif](./public/gif/Add%20plant.gif)
 
 ## Next Steps: 
 1. Edit and Delete for plant collection and individual plant
