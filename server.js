@@ -15,7 +15,7 @@ var indexRouter = require('./routes/index');
 var homePostsRouter = require('./routes/home');
 var usersRouter = require('./routes/users');
 var postsRouter = require('./routes/posts'); 
-const commentsRouter = require('./routes/comments');
+var commentsRouter = require('./routes/comments');
 var plantCollectionRouter = require('./routes/plantCollections');
 var plantsRouter = require('./routes/plants')
 

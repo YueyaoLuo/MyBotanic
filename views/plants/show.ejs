@@ -1,9 +1,48 @@
 <%- include('../partials/header') %>
-<div class="title-container">
-    <h2><%= plantCollection.collectionName %></h2>
-    <form action="" method="POST">
-        <button class="create-btn btn" type="submit">Edit</button>
-    </form>
-</div>
+    <div class="row  gx-5">
+        <div class="form-container col">
+            <div class="p-3">
+            <div class="plant-info-row">
+                <p>Botanical Name: <em>
+                        <%=plant.botanicalName%>
+                    </em>
+                </p>
+            </div>
+            <div class="plant-info-row">
+                <p>Common Name: <%=plant.commonName%>
+                </p>
+            </div>
+            <div class="plant-info-row">
+                <p>Mature Height: <%=plant.matureHeight%>
+                </p>
+            </div>
+            <div class="plant-info-row">
+                <p>Mature Width: <%=plant.matureWidth%>
+                </p>
+            </div>
+            <div class="plant-info-row">
+                <p>Plant Type: <%=plant.plantType%>
+                </p>
+            </div>
+            <div class="plant-info-row">
 
-<%- include('../partials/footer') %>
+                <% if (plant.Native) { %>
+                    <p>Native: Yes</p>
+                    <% } else { %>
+                        <p>Native: No</p>
+                        <% } %>
+            </div>
+            <div class="plant-info-row">
+                <p>Notes: <%=plant.Notes%>
+                </p>
+            </div>
+</div>
+        </div>
+        <div class="form-container col">
+            <div class="p-3">
+                <img src="<%=plant.plantPhoto%>" alt="plant photo">
+            </div>
+
+        </div>
+    </div>
+    <%- include('../partials/footer') %>
