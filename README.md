@@ -1,11 +1,21 @@
-# App Title: MyBotanic
+## App Title: MyBotanic
 
-# Wireframes: 	![Login page](/wireframes/Login%20page.png) ![Home page](/wireframes/Home%20page.png) ![Commenting page](/wireframes/Commenting%20page.png)![My collection page](/wireframes/My%20Collection%20Page.png) ![Create collection page](/wireframes/Create%20Collection%20Page.png) ![Collection1 page](/wireframes/Collection%201%20Page.png) ![New plant page](/wireframes/New%20Plant%20page.png)
+## Project background:
 
-# ERD:![Login page](/ERD/Entity%20Relationship%20Diagram.jpg)
+## Project overview:
 
-# Technologies Used: Javascript, HTML, CSS, MongoDB
+## Technology Stack: 
+Node.js + EJS + Bootstrap + MongoDB + AWS S3
 
-# Getting Started: [Project Planning](https://trello.com/b/1htQvFeY/gaproject2)  [APP webpage](https://mybontanic.onrender.com/home)
+## Getting Started: 
+- [Wireframes](https://www.figma.com/design/F80QCJxVE72rnD9Du72Nm4/GA_Project2%3A-MyBotanic?node-id=0-1&t=nbnDsBQwbe4rIGBZ-1)
+- [ERD](https://miro.com/welcomeonboard/U1VmZVhyVWpDb0gwWHN4RUxjN0h5aGhkYXVtZVl4d3c2SU9rTVNRNEVpUldJT0V3SVJtNWFnbDNUdElaR1hvZHwzMDc0NDU3MzQ3NTgxOTY0ODMyfDI=?share_link_id=446756152333)
+- [Deployed app](https://mybontanic.onrender.com/home)
 
-# Next Steps: 
+## Screenshots:
+
+## Next Steps: 
+1. Edit and Delete for plant collection and individual plant
+2. "Like" and share posts
+3. Follow other users
+4. Add tags for each post
