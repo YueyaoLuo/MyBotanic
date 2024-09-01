@@ -2,7 +2,7 @@
 
     <form id="edit-form" action="/posts/<%= post._id %>?_method=PUT" method="POST">
 
-        <textarea class="new-input-box input-field" type="text" name="content"><%= post.content %></textarea>
+        <textarea class="new-input-box input-field form-control" type="text" name="content"><%= post.content %></textarea>
 
         <button class="btn" type="submit">Update</button>
     </form>

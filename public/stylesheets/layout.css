@@ -53,6 +53,10 @@ a:hover{
   font-size: 1.2em;
 
 }
+
+.navbar-brand a:hover{
+  color: rgb(121, 255, 121);
+}
 .navbar-img {
   display: inline-block;
 

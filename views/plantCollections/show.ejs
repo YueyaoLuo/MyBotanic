@@ -9,32 +9,34 @@
     </div>
 
 
-<!-- show all plants with photo and name -->
-    <div class="board-collections plant-collections">
-        <% if(plantCollection.plants && plantCollection.plants.length> 0){%>
+    <!-- show all plants with photo and name -->
+    <% if(plantCollection.plants && plantCollection.plants.length> 0){%>
+        <div class="board-collections">
             <%plantCollection.plants.forEach(function(p){%>
-                <div class="board-container photo-container">
+                <div class="board-container">
                     <a href="/plantCollections/<%=plantCollection._id%>/plants/<%=p._id%>">
-                    <div class="board-cover photo">
-                        <img src="<%=p.plantPhoto%>" alt="plant photo">
-                    </div>
-                    <div class="metadata board-text">
-                        <%if (p.botanicalName && p.commonName){%>
-                            <p><i>
-                                    <%=p.botanicalName%>
-                                </i> / <%=p.commonName%>
-                            </p>
-                            <%} else {%>
-                                <p>
-                                    <%=p.commonName%>
+                        <div class="board-cover photo">
+                            <img src="<%=p.plantPhoto%>" alt="plant photo">
+                        </div>
+                        <div class="metadata board-text">
+                            <%if (p.botanicalName && p.commonName){%>
+                                <p><i>
+                                        <%=p.botanicalName%>
+                                    </i>/ <%=p.commonName%>
+
                                 </p>
-                                <%}%>
-                    </div>
+                                <%} else {%>
+                                    <p>
+                                        <%=p.commonName%>
+                                    </p>
+                                    <%}%>
+                        </div>
+                    </a>
                 </div>
 
                 <% }) %>
-    </div>
-    <% } else { %>
-        <p>No plant yet</p>
-        <% } %>
-            <%- include('../partials/footer') %>
+        </div>
+        <% } else { %>
+            <p>No plant yet</p>
+            <% } %>
+                <%- include('../partials/footer') %>

@@ -307,7 +307,7 @@ h4{
 
 #new-form {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
 }
 
@@ -315,6 +315,7 @@ h4{
   width: 100%;
   max-width: 600px;
   padding: 20px;
+  margin: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   background-color: #fff;
@@ -367,3 +368,6 @@ h4{
   font-weight: bold;
 }
 
+.plant-info-row p{
+  text-align: start;
+}
